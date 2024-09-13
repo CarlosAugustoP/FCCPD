@@ -1,0 +1,25 @@
+- A classe produtor criada anteriormente não é thread safe
+- As duas threads de tipo produtor podem acessar o armazém ao mesmo tempo, o que pode levar o armazém a dar informações erradas
+- Para resolver esse problema, é necessário sincronizar o acesso ao armazém
+- A sincronização de threads deve ser utilizada quando a execução de uma determinada thread depende de uma (ou várias) threads ainda em execução
+- a interação entre threads pode ser dos seguintes tipos:
+    - Competição: threads competem por recursos compartilhados
+        - Assegura a competição mútua aos dados compartilhados
+    - Cooperação: threads cooperam para realizar uma tarefa
+        - Assegura que as operações realizadas serão semânticamente corretas
+        - Utiliza semáforos.
+Competição:
+ - Em java, a cláusula synchronized garante a exclusão mútua do método, ou até um trecho de código.
+ - Deve garantir a atomicidade da seção crítica.
+
+ Cooperação:
+ - Ocorre quando o progresso de uma thread depende do progresso de outra.
+ - Para a cooperação em Java, utilizamos synchronized em conjunto com wait() e notify().    
+
+ JAVA MONITORS:
+ - Todo objeto java tem um monitor que permite a construção de blocos de código em que uma única thread pode executar por vez
+ - Utiliza a palavra synchronized, que pode ser utilizada em métodos ou blocos de código específicos
+ - É recomendável analisar a necessidade de se usar o synchronized no método ao invpes de usar os trechos do método, de forma a melhorar o desempenho do metodo em questão.
+ - Além do synchronized, podemos utilizar o wait() e notify() para a cooperação entre threads
+ - esses métodos permitem interromper e acordar threads em certas circunstâncias
+ - Podem ser executados por threads que estejam de posse de monitor do objeto em questão.

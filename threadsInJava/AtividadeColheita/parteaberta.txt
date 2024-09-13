@@ -1,0 +1,11 @@
+Quais problemas podem ser observados nas interações do armazém com os
+produtores?
+- O armazém não consegue armazenar todos os produtos produzidos pelos produtores.
+- O código não possui uma função que verifica se o armazém está cheio, e se for este o caso para a execução, então ele roda mesmo quando o armazém está cheio.
+- o código não é thread-safe, pois não possui um mecanismo de sincronização, e duas threads podem acessar o armazém ao mesmo tempo.
+O que pode ser feito para a resolução desses problemas?
+- Podemos criar uma verificação que impede a execução caso o armazéms esteja cheio.
+
+Quais métodos da classe Thread podem ser utilizados na resolução desses
+problemas (justifique) ?
+- O método join() pode ser utilizado para garantir que o armazém tenha espaço antes de continuar a execução.

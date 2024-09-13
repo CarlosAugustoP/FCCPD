@@ -1,0 +1,70 @@
+"Um sistema distribuido é um conjunto de computadores independentes que se apresenta a seus usuários como um sistema único e coerente."
+- Andrew S. Tanenbaum, 2015
+
+Um sistema distribuido é um sistema de computadores formado por diversas máquinas autônomas, que se comunicam através de mensagens dentro de uma rede.
+- Não há premissas com relação aos tipos de computadores. 
+    - Esses podem ser desde mainframes até sistemas embarcados.
+    - Também não há premissas com relação à forma de conexão entre os componentes. 
+
+Entretanto:
+- Substituir uma arquitetura monolítica por uma distribuída traz algumas vantagens (várias além do custo), mas Também traz desafios.
+- As vantagens de um sistema distribuído: 
+    - Compartilhamento de recursos
+    - Confiabilidade
+    - Desempenho
+- As desvantagens de um sistema distribuído:
+    - Concorrência
+    - Falta de um relógio global
+    - Falhas independentes
+
+O que caracteriza um sistema distribuido?
+- O que não é?
+    - Um único processo funcionando em um único computador.
+- O que é?
+    - Um conjunto de processos que se comunicam em várias máquinas e servem um objetivo comum.
+
+Cliente - Servidor
+- Essa é a arquitetura mais comum em sistemas distribuídos.
+- Históricamente, é a mais importante e continua sendo a mais amplamente utilizada.
+- Pensando assim, uma aplicação web pode ser considerado um sistema distribuido a medida que conta com componentes como um Banco de Dados, um servidor de aplicação, um servidor web e pode fazer solicitações para várias outras APIs.
+- Uma arquitetura distribuida consiste de várias funcionalidades que podem ser invocadas através de uma rede. Basicamente, ela é composta por:
+    - Processos servidores: Aceitam requisições de outros processos
+    - Processos clientes: Iniciam requisições para outros processos
+- A execução de uma determinada ação pode envolver a comunicação entre vários processos.
+
+Tipos de Arquitetura:
+- Arquitetura centralizada
+    - Modelo cliente-servidor
+- Arquitetura descentralizada
+    - Modelo peer-to-peer
+- Arquitetura híbrida
+    - Modelo cliente-servidor e peer-to-peer
+
+Servidores proxy:
+- Limita a interação entre os componentes
+- Deixam a aplicação menos vulnerável
+- Mantém segurança
+- Deve ter um bom Desempenho para não se tornar um gargalo 
+- Atua como um servidor que acessa outros servidores para um determinado conjunto de clientes. 
+    - Nesse caso, os clientes não acessam diretamente os servidores, mas sim o servidor proxy.
+    - As invocações são solicitadas ao proxy e depois para o cliente 
+
+
+Arquitetura descentralizada:
+- Modelo peer-to-peer
+    - Neste tipo de arquitetura, os componentes se comunicam sem noção de hierarquia.
+    - Todos os componentes podem disponibilizar serviços e invocar funcionalidades oferecidas por outros peers.
+    - Todos os peers podem interagir entre si.   
+    - Cada nó é um cliente e um servidor
+    - Não há um servidor central
+    - vantagens: 
+        - Tráfego dividido
+        - Escalabilidade
+        - Tolerância a falhas
+        - Desempenho
+    - desvantagens:
+        - Vulnerabilidade
+        - Manuntenção
+
+Middleware:
+

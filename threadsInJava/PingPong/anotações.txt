@@ -1,0 +1,29 @@
+Multithreading:
+- Refere-se À habilidade do S.O em suportar múltiplas threads de execução em um mesmo processo
+- Threads são fluxos de execução que compartilham o mesmo espaço de endereçamento
+- Em um ambiente Multithread, um processo:
+    - é a unidade de alocação e proteção de recursos
+    - tem acesso controlado a outros processos, arquivos e outros recursos
+    - é composto por uma ou mais threads
+- Já as threads apresentam:
+    - Um estado de execução (pronta, bloqueada,...).
+    - Um contexto salvo quando não estiver em execução.
+    - Um espaço de pilha próprio para execução.
+    - Acesso a variáveis locais próprias.
+    - Acesso compartilhado com outras threads a variáveis globais.
+
+Ciclo de vida de uma thread:
+- Novo: thread é criada e inicializada.
+- Executável: thread é executada.
+- Bloqueado: thread é interrompida por algum motivo.
+- Terminado: thread é finalizada.
+
+Threads em java:
+- Em java, threads são representadas pela classe Thread.
+- Para criar uma thread, é necessário:
+    - Estender a classe Thread e sobrescrever o método run().
+    - Instanciar a classe e chamar o método start().
+ou 
+    - Implementar a interface Runnable e sobrescrever o método run().
+    - Instanciar a classe e passar a instância para um objeto Thread.
+    - Chamar o método start().

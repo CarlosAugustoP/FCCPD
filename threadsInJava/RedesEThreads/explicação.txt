@@ -1,0 +1,48 @@
+Redes, Threads e Marshalling básico
+
+1. Comunicação entre processos
+2. Sockets Unix
+3. Sockets TCP/IP 
+    - Sockets TCP
+    - Sockets UDP
+4. Sockets Unix
+
+O que são Sockets?
+- Sockets são portas de entrada para processos de comunicação. Isso é, permitem que dois processos distintos de comuniquem e, por consequência, geram determinado resultado.
+- Processos de comunicação que permitem o diálogo entre processos.
+- Na internet, eles trabalham na conexão de usuário e site.
+- É uma abstração para cada um dos extremos (endpoints) da comunicação entre dois processos.
+- Comunicação exige a criação de um socket pelo processo remetente e outro pelo processo destinatário.
+
+Sockets Unix:
+- Limitado para comunicação entre processos em uma mesma máquina.
+- São endereçados por meio de arquivos dos sistema
+- Utiliza as classes Java SocketChannel e ServerSocketChannel
+- Apresentam tempo de configuração mais rápida e maior saída de dados 
+- Não são adequados para comunicação entre máquinas diferentes
+
+Sockets TCP/IP:
+- Permite a comunicação entre processos em máquinas diferentes.
+- Sistemas distribuidos dependem da rede para a comunicação entre processos.
+- Maior parte da comunicação entre processos em sistemas distribuídos é feita por meio de sockets TCP/IP.
+- Usa as classes Socket e ServerSocket do java.net
+- ServerSocket: Servidor que escuta uma porta específica e aceita conexões de clientes.
+
+    ServerSocket servidor = new ServerSocket(endereço, porta);
+    Socket cliente = servidor.accept();
+
+Primitiva das Redes:
+- Para se comunicar com o servidor, o cliente deve saber o endereço IP e a porta do servidor.
+- O servidor deve estar em execução e aguardando a conexão do cliente.
+- A comunicação pode ser feita de forma síncrona ou assíncrona.
+- A síncrona usa TCP e a assíncrona usa UDP.
+
+Comunicação entre processos 
+- Duas operações básicas: Send e Receive.
+- Definidas em termos de destinos de mensagens
+- Implementadas através de "filas" (buffers) de mensagens em cada lado da comunicação.
+- Podem envolver a sincronização entre o processo que envia mensagem e o processo que recebe.
+- Comunicação síncrona ou assíncrona.
+    - Comunicação síncrona: Envio (send) e recebimento (receive) sincronizados para cada mensagem - operações bloqueantes.
+    - Comunicação assíncrona: Envio (send) e recebimento (receive) não sincronizados - operações não bloqueantes.
+- Na ptática, a mais utilizada é a comunicação síncrona.
